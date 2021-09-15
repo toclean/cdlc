@@ -139,7 +139,7 @@ export class MusicSubscription {
 			const resource = await nextTrack.createAudioResource();
 			this.audioPlayer.play(resource);
 			this.queueLock = false;
-		} catch (error) {
+		} catch (error: any) {
 			// If an error occurred, try the next item of the queue instead
 			nextTrack.onError(error);
 			this.queueLock = false;
